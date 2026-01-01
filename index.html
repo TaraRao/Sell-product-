@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SSBT Intellects – 7-Day Strategic Systems Blueprint</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --card: #ffffff;
+      --primary: #1f4f7b;
+      --primary-soft: #e4edf7;
+      --accent: #f4b000;
+      --text-main: #1f2933;
+      --text-muted: #6b7280;
+      --border: #d1d5db;
+      --max-width: 960px;
+      --radius: 10px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--primary);
+      font-size: 14px;
+    }
+    .nav-links {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    .nav-links span {
+      margin-left: 16px;
+      cursor: default;
+    }
+    .hero {
+      max-width: var(--max-width);
+      margin: 40px auto;
+      padding: 24px 20px 40px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 32px;
+    }
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; }
+    }
+    .hero-main {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 11px;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-size: 30px;
+      line-height: 1.25;
+      margin-bottom: 12px;
+      color: var(--text-main);
+    }
+    .subtitle {
+      font-size: 16px;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+    .hero-highlight {
+      background: var(--primary-soft);
+      border-radius: 8px;
+      padding: 14px 16px;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+    .hero-highlight strong {
+      color: var(--primary);
+    }
+    .hero-bullets {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+    .hero-bullets li {
+      margin-left: 18px;
+      margin-bottom: 4px;
+    }
+    .price-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      font-size: 15px;
+    }
+    .price-tag {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 18px;
+    }
+    .pill {
+      background: #e5f5e9;
+      color: #166534;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+      border-radius: 999px;
+      padding: 10px 22px;
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn-primary:hover {
+      background: #163a5a;
+    }
+    .cta-note {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .hero-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+    .hero-side {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 18px 18px 20px;
+      border: 1px solid var(--border);
+    }
+    .card h3 {
+      font-size: 15px;
+      margin-bottom: 8px;
+      color: var(--primary);
+    }
+    .card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .tag {
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #eef2f7;
+      color: #4b5563;
+    }
+    .section {
+      max-width: var(--max-width);
+      margin: 0 auto 32px;
+      padding: 0 20px;
+    }
+    .section-inner {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 24px 24px 26px;
+      border: 1px solid var(--border);
+    }
+    .section h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+    .section p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+    @media (max-width: 800px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+    .list {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    .list li {
+      margin-left: 18px;
+      margin-bottom: 4px;
+    }
+    .pill-accent {
+      background: #fff7e6;
+      color: #92400e;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 11px;
+      font-weight: 500;
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 16px 20px 24px;
+      font-size: 12px;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 30px;
+    }
+    a.text-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    a.text-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="logo">SSBT INTELLECTS</div>
+      <div class="nav-links">
+        <span>Blueprint</span>
+        <span>Scorecard</span>
+        <span>About</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-main">
+        <div class="eyebrow">The 7-Day Strategic Systems Blueprint</div>
+        <h1>Build the systems your business needs to scale — in one week.</h1>
+        <p class="subtitle">
+          A practical, corporate-grade blueprint for solo founders, consultants, and small teams who want
+          structure, predictability, and control without hiring a full operations department.
+        </p>
+
+        <div class="hero-highlight">
+          <strong>Stop running your business on chaos.</strong><br />
+          If you’re tired of juggling tasks, reacting to problems, and feeling like everything depends on you,
+          this blueprint is your turning point.
+        </div>
+
+        <ul class="hero-bullets">
+          <li>Design lean, professional systems for leads, sales, content, and delivery.</li>
+          <li>Implement workflows and automations used by high-performing consulting and SaaS teams.</li>
+          <li>Do it in 7 focused days — without custom software or a big team.</li>
+        </ul>
+
+        <div class="price-row">
+          <span class="price-tag">£27</span>
+          <span class="pill">Launch price</span>
+          <span class="cta-note">One-time purchase. Instant access.</span>
+        </div>
+
+        <div class="cta-row">
+          <a href="blueprint.html" class="btn-primary">Get the 7-Day Blueprint</a>
+          <a href="scorecard.html" class="text-link">Or start with the free Systems Scorecard →</a>
+        </div>
+        <div class="hero-meta">
+          No fluff. No overwhelm. Just clear, structured execution for serious operators.
+        </div>
+      </div>
+
+      <aside class="hero-side">
+        <div class="card">
+          <h3>Why this blueprint exists</h3>
+          <p>
+            Most entrepreneurs don’t fail because of bad ideas — they stall because they don’t have systems.
+          </p>
+          <p>
+            No lead generation rhythm. No predictable sales process. No content engine. No onboarding structure.
+            No automation. Everything feels ad hoc.
+          </p>
+          <p>
+            This blueprint gives you a practical, consulting-style way to design and implement the five core
+            systems your business needs to grow with less friction.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Who it’s for</h3>
+          <p>Designed for professionals who think in outcomes, not hacks:</p>
+          <div class="tag-list">
+            <span class="tag">Solo consultants</span>
+            <span class="tag">Coaches</span>
+            <span class="tag">Service providers</span>
+            <span class="tag">Boutique agencies</span>
+            <span class="tag">Creators with offers</span>
+            <span class="tag">Small business owners</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <h2>What’s inside the 7-Day Strategic Systems Blueprint</h2>
+        <p>
+          A structured, implementation-focused asset you can work through in a week — or revisit whenever you
+          refine your operations.
+        </p>
+
+        <div class="grid-2">
+          <div>
+            <div class="pill-accent">Core asset</div>
+            <h3 style="font-size:15px; margin-bottom:6px;">1. The 7-Day Systems Blueprint</h3>
+            <ul class="list">
+              <li>Day 1 – Lead generation system design</li>
+              <li>Day 2 – Sales funnel and offer flow</li>
+              <li>Day 3 – Content and visibility engine</li>
+              <li>Day 4 – Automation and follow-up</li>
+              <li>Day 5 – Onboarding and delivery workflow</li>
+              <li>Day 6 – KPI dashboard and review cadence</li>
+              <li>Day 7 – Scale and optimisation roadmap</li>
+            </ul>
+          </div>
+          <div>
+            <div class="pill-accent">Execution support</div>
+            <h3 style="font-size:15px; margin-bottom:6px;">2. Plug-and-play templates</h3>
+            <ul class="list">
+              <li>Sales funnel and offer mapping template</li>
+              <li>Lead magnet and lead capture template</li>
+              <li>Email sequence and follow-up framework</li>
+              <li>Content calendar and pillar planning grid</li>
+              <li>Automation map (triggers, actions, conditions)</li>
+              <li>Simple KPI dashboard layout (Notion / spreadsheet)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-top:18px;">
+          <div>
+            <div class="pill-accent">Intelligent leverage</div>
+            <h3 style="font-size:15px; margin-bottom:6px;">3. AI workflow prompts</h3>
+            <ul class="list">
+              <li>Prompts for drafting emails, scripts, and outreach</li>
+              <li>Prompts for documenting and refining processes</li>
+              <li>Prompts for content ideation and repurposing</li>
+              <li>Prompts for identifying bottlenecks and constraints</li>
+            </ul>
+          </div>
+          <div>
+            <div class="pill-accent">Fast start</div>
+            <h3 style="font-size:15px; margin-bottom:6px;">4. 20-minute quick-start guide</h3>
+            <ul class="list">
+              <li>“Start here” walkthrough to avoid overwhelm</li>
+              <li>Suggested 7-day schedule for busy operators</li>
+              <li>How to adapt the blueprint to your business model</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <h2>Expected outcomes in 7 days</h2>
+        <p>
+          By the end of the week, you won’t just have ideas — you’ll have working systems and a clear view of
+          what to improve next.
+        </p>
+        <ul class="list">
+          <li>A defined lead generation rhythm and capture mechanism.</li>
+          <li>A simple, structured sales funnel that doesn’t rely on guesswork.</li>
+          <li>A realistic content workflow you can sustain.</li>
+          <li>Basic but effective automations for follow-up and nurturing.</li>
+          <li>An onboarding and delivery flow that feels professional and consistent.</li>
+          <li>A lightweight KPI dashboard to track what actually matters.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <h2>Pricing & guarantee</h2>
+        <p><strong>Launch price: £27</strong> — a one-time investment for a reusable, consulting-style asset.</p>
+        <p>
+          If you don’t feel more organised, more structured, and more in control within 7 days of working with
+          the blueprint, email us and we’ll refund you. No drama, no friction.
+        </p>
+        <div class="cta-row" style="margin-top:12px;">
+          <a href="blueprint.html" class="btn-primary">Get instant access to the blueprint</a>
+          <span class="cta-note">You can start with the Systems Scorecard if you’d like to diagnose first.</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    SSBT Intellects · Strategic Systems for Serious Operators ·
+    <a href="scorecard.html" class="text-link">Free Systems Scorecard</a>
+  </footer>
+</body>
+</html>
